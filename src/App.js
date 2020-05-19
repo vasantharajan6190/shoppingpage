@@ -5,7 +5,7 @@ import Showitems from "./containers/showitems/showitems"
 import Admin from "./containers/Admin/admin"
 import 'react-toastify/dist/ReactToastify.css';
 import Homepage from './containers/homepage/homepage';
-import {Variables} from "./Contextapi"
+import {Variables} from "./containers/homepage/homepage"
 function App() {
   return (
     <Variables>

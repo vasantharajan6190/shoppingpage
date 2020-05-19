@@ -1,7 +1,7 @@
 import React,{ useState,useContext} from "react"
 import "./showitems.css"
 import Card from "../../components/card/card"
-import {createcontext} from "../../Contextapi"
+import {createcontext} from "../../containers/homepage/homepage"
 function Showitems(props){
 const [item,setitem ] = useContext(createcontext)
 return(
