@@ -11,6 +11,7 @@ return(
     <a className="text-right">Ratings: {props.rating}</a>
     </div>
   </div>
+  <button className="btn btn-sm btn-primary mb-2">More...</button>
 </div>
 )
 }
