@@ -28,7 +28,7 @@ return(
     <Fragment>
     {login?
         <div className="container my-5 ">
-        <p className="text-center display-4">ADD PRODUCTS</p>
+        <p className="text-center font-weight-normal display-4" style={{ color:"#015298"}}>ADD PRODUCTS</p>
         <div className="d-flex justify-content-center">
         <form style={{width:"50%"}} onSubmit={onsubmit}>
         <input type="text" name="title" placeholder="Product Name" onChange={e=>onchange(e)} value={items.title} className="form-control my-3" required/>

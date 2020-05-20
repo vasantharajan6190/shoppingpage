@@ -4,6 +4,7 @@ import Card from "../../components/card/card"
 import {createcontext} from "../../containers/homepage/homepage"
 function Showitems(props){
 const [item,setitem ] = useContext(createcontext)
+const routename = props.location.pathname
 return(
     <React.Fragment>
     
@@ -11,7 +12,7 @@ return(
     <h5 className="text-center">Total No.of.Products: {item.length}</h5>
 <div className="ml-3 row m-0 justify-content-start">
 {item.map((res,index)=>(
-    <Card key={index} title={res.title} rating={res.rating} src={res.img} price={res.price}/>
+    <Card pathname={routename} key={index} title={res.title} rating={res.rating} src={res.img} price={res.price}/>
 ))}
 </div>
 </React.Fragment>

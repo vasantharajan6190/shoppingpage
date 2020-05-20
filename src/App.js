@@ -1,5 +1,7 @@
 import React,{Fragment,useContext}from "react";
 import "./app.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCartPlus,faHeart,faBan } from '@fortawesome/free-solid-svg-icons'
 import {BrowserRouter,Switch,Route,Link,useHistory} from 'react-router-dom'
 import Showitems from "./containers/showitems/showitems"
 import Admin from "./containers/Admin/admin"
@@ -11,7 +13,9 @@ import Homepage from './containers/homepage/homepage';
 import {Variables} from "./containers/homepage/homepage"
 import Register from "./containers/register/register"
 import Login from "./containers/login/login"
-toast.configure();
+import Cart from "./containers/cart/cart"
+import Fav from "./containers/favourites/fav"
+toast.configure({autoClose:2000});
 function App() {
   const history = useHistory()
   const main = useContext(logincontext)
@@ -55,15 +59,19 @@ function App() {
      </div>
        </div>
        {bool?<Link to="/shoppingpage" style={{marginTop:"-9px"}}><button className="float-right btn btn-sm btn-white px-3 my-2" onClick={onclick}>Log Out</button></Link>:null}
-
       </nav>
-      
+      {bool? <div className="d-flex justify-content-end">
+      <Link to="/cart"><button className="btn font-weight-bold btn-sm btn-outline-warning border rounded px-4 m-2">:<FontAwesomeIcon icon={faCartPlus} className="mr-2"/>My Cart</button></Link>
+      <Link to="/fav"><button className="btn font-weight-bold btn-sm btn-outline-warning border rounded px-4 m-2"><FontAwesomeIcon icon={faHeart} className="mr-2"/>Favourites</button></Link>
+      </div>:null}
        <Switch>
        <Route path="/showitems" exact component={Showitems}/>
        <Route path="/admin" exact component={Admin}/>
        <Route path="/login" exact component={Login}/>
        <Route path="/register" exact component={Register}/>
        <Route path="/shoppingpage" exact component={Homepage}/>
+       <Route path="/fav" exact component={Fav}/>
+       <Route path="/cart" exact component={Cart}/>
        </Switch>
        </BrowserRouter>
        </Fragment>
