@@ -6,7 +6,7 @@ function Showitems(props){
 const [item,setitem ] = useContext(createcontext)
 return(
     <React.Fragment>
-    <p className="text-center text-primary mt-5 font-italic display-3">Our Products</p>
+    <p className="text-center mt-5 font-weight-normal display-3" style={{ color:"#015298"}}>Our Products</p>
     <h5 className="ml-5">Total No.of.Products: {item.length}</h5>
 <div className="row m-0 justify-content-start">
 {item.map((res,index)=>(
