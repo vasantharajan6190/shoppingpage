@@ -18,15 +18,15 @@ function Cart(props){
             <div className="ml-3 row m-0 justify-content-start">
             {cart.map((res,index)=>(
                 pricetot = parseInt(res.price)+pricetot,
-                <Card pathname={props.location.pathname} key={index} title={res.title} price={res.price} rating={res.rating} src={res.img}/>
+                <Card pathname={props.location.pathname} favback={res.favback} cartback={res.cartback} key={index} title={res.title} price={res.price} rating={res.rating} src={res.img}/>
             ))}
             </div>
             <div className="mr-5">
             <h2 className="container my-4 font-weight-normal">Total Price:{pricetot}</h2>
             </div>
-            </div>     
-            :
-            <p className="text-center font-weight-normal display-4 mt-5">Login to Add products to carts</p>}
+            </div>  :
+        <p className="text-center font-weight-normal display-3 mt-5">Login in to access the cart</p>
+        }   
              </Fragment>       
     )
 }

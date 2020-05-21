@@ -12,7 +12,7 @@ return(
     <h5 className="text-center">Total No.of.Products: {item.length}</h5>
 <div className="ml-3 row m-0 justify-content-start">
 {item.map((res,index)=>(
-    <Card pathname={routename} key={index} title={res.title} rating={res.rating} src={res.img} price={res.price}/>
+    <Card pathname={routename} favback={res.favback} cartback={res.cartback} key={index} fav={res.fav} cart={res.cart} title={res.title} rating={res.rating} src={res.img} price={res.price}/>
 ))}
 </div>
 </React.Fragment>

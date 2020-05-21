@@ -10,7 +10,6 @@
 }
 .cart{
     font-size:20px;
-    color:black;
     margin-bottom:10px;
 }
 .cart:hover{
@@ -18,4 +17,7 @@
 }
 .card-body{
     padding-bottom:0px;
+}
+.favback{
+    color:orange !important;
 }

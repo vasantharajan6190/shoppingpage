@@ -15,12 +15,12 @@ function Fav(props){
             </div>
             <div className="container">
             {fav.map((res,index)=>(
-                <Card pathname={props.location.pathname} key={index} title={res.title} price={res.price} rating={res.rating} src={res.img}/>
+                <Card pathname={props.location.pathname} favback={res.favback} cartback={res.cartback} key={index} title={res.title} price={res.price} rating={res.rating} src={res.img}/>
             ))}
             </div>
           </div>
-            :
-            <p className="text-center font-weight-normal display-4 mt-5">Login to explore favoutites</p>}
+    :
+    <p className="text-center font-weight-normal display-3 mt-5">Login in to access the cart</p>}
         </Fragment>       
     )
 }

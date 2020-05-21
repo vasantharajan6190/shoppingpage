@@ -60,7 +60,8 @@ function App() {
        </div>
        {bool?<Link to="/shoppingpage" style={{marginTop:"-9px"}}><button className="float-right btn btn-sm btn-white px-3 my-2" onClick={onclick}>Log Out</button></Link>:null}
       </nav>
-      {bool? <div className="d-flex justify-content-end">
+      {login?
+      <div className="d-flex justify-content-end">
       <Link to="/cart"><button className="btn font-weight-bold btn-sm btn-outline-warning border rounded px-4 m-2">:<FontAwesomeIcon icon={faCartPlus} className="mr-2"/>My Cart</button></Link>
       <Link to="/fav"><button className="btn font-weight-bold btn-sm btn-outline-warning border rounded px-4 m-2"><FontAwesomeIcon icon={faHeart} className="mr-2"/>Favourites</button></Link>
       </div>:null}
