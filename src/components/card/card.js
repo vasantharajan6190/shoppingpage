@@ -25,34 +25,39 @@ function Card(props){
     cartback:props.cartback
   })
   function cartonclick(e){
-    let itemindex = 0 
+    let itemindex = 0
+    let enter = false
     cart.map((res,index)=>{
       if(res.title===addcart.title){
          itemindex = index
+         enter=true
       }
     })
      
-    if(itemindex===0){
+    if(!enter){
       // const change = !(addcart.cartback)
       // setaddcart({...addcart,cartback:change})
       item.map(res=>{
         if(res.title===addcart.title){
           res.cartback=true
+          addcart.cartback = true
         }
       })
       cart.map(res=>{
         if(res.title===addcart.title){
           res.cartback=true
+          addcart.cartback = true
         }
       })
       fav.map(res=>{
         if(res.title===addcart.title){
           res.cartback=true
+          addcart.cartback = true
         }
       })
       setcart(prev=>[...prev,addcart])
-          toast.success("Item Added to cart")
-          history.push(routename)
+      console.log(addcart)
+          toast.success("Item Added to cart",{className:"text-center mt-4"})
     }
     else{
       // const change = !(addcart.cartback)
@@ -60,58 +65,67 @@ function Card(props){
       item.map(res=>{
         if(res.title===addcart.title){
           res.cartback=false
+          addcart.cartback=false
         }
       })
       cart.map(res=>{
         if(res.title===addcart.title){
           res.cartback=false
+          addcart.cartback=false
         }
       })
       fav.map(res=>{
         if(res.title===addcart.title){
           res.cartback=false
+          addcart.cartback=false
         }
       })
       setcart(prev=>[...prev,addcart])
       const toupdate = cart
       toupdate.splice(itemindex,1)
       setcart(toupdate)
-      toast.success("Item removed from cart")
-      history.push(routename)
+      toast.success("Item removed from cart",{className:"text-center mt-4"})
+     
     }
-   
+    history.push(routename)
+   console.log(itemindex)
   }
   
 
 
   function favonclick(e){
+    let enter = false
     let itemindex = 0 
     fav.map((res,index)=>{
       if(res.title===addcart.title){
          itemindex = index
+         enter = true
       }
     })
      
-    if(itemindex===0){
+    if(!enter){
       const change = !(addcart.favback)
       setaddcart({...addcart,favback:change})
       item.map(res=>{
         if(res.title===addcart.title){
-          res.favback=true
+          res.favback=
+          addcart.favback=true
         }
       })
       cart.map(res=>{
         if(res.title===addcart.title){
           res.favback=true
+          addcart.favback=true
         }
       })
       fav.map(res=>{
         if(res.title===addcart.title){
           res.favback=true
+          addcart.favback=true
         }
       })
       setfav(prev=>[...prev,addcart])
-          toast.success("Item Added to Favourites")
+          toast.success("Item Added to Favourites",{className:"text-center mt-4"})
           history.push(routename)
     }
     else{
@@ -120,23 +134,26 @@ function Card(props){
       item.map(res=>{
         if(res.title===addcart.title){
           res.favback=false
+          addcart.favback=false
         }
       })
       cart.map(res=>{
         if(res.title===addcart.title){
           res.favback=false
+          addcart.favback=false
         }
       })
       fav.map(res=>{
         if(res.title===addcart.title){
           res.favback=false
+          addcart.favback=false
         }
       })
       setfav(prev=>[...prev,addcart])
       const toupdate = fav
       toupdate.splice(itemindex,1)
       setfav(toupdate)
-      toast.success("Item removed from favourites")
+      toast.success("Item removed from favourites",{className:"text-center mt-4"})
       history.push(routename)
     }
   }
